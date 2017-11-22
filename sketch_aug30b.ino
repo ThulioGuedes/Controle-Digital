@@ -162,6 +162,9 @@ class calculoPID {
         case 'p':
           digitalWrite(led1, HIGH);
           Serial.println("Digite um valor para P: ");
+          Serial.println(" ");
+          Serial.print("Valor atual: ");
+          Serial.print(kp,8);
           delay(6000);
           p = _P;
           _P = Serial.parseFloat();
@@ -176,6 +179,9 @@ class calculoPID {
         case 'i':
           digitalWrite(led2, HIGH);
           Serial.println("Digite um valor para I: ");
+          Serial.println(" ");
+          Serial.print("Valor atual: ");
+          Serial.print(ki,8);
           delay(6000);
           i = _I;
           _I = Serial.parseFloat();
@@ -191,6 +197,9 @@ class calculoPID {
           digitalWrite(led1, LOW);
           digitalWrite(led2, LOW);
           Serial.println("Digite um valor para D: ");
+          Serial.println(" ");
+          Serial.print("Valor atual: ");
+          Serial.print(kd,8);
           delay(6000);
           d = _D;
           _D = Serial.parseFloat();
@@ -253,11 +262,11 @@ float iHorizontal = 0;
 
 float kpVertical = 0.3;
 float kiVertical = 0.00001; // Quanto maior o ki, mais lento a reação do servo
-float kdVertical = 0.001; // Quanto maior o kd, mais instável o movimento do servo
+float kdVertical = 0.0001; // Quanto maior o kd, mais instável o movimento do servo
 
 float kpHorizontal = 0.3;
 float kiHorizontal = 0.00001;
-float kdHorizontal = 0.001;
+float kdHorizontal = 0.0001;
 
 
 unsigned long TAnterior = 0;
